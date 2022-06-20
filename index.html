@@ -4,25 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="./css/phone.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/tablet.css" media="(min-width: 600px)">
+    <link rel="stylesheet" href="./css/desktop.css" media="(min-width: 1000px)">
+    <link rel="icon" href="./images/icon_page.png">
+    <title>MovieExpress</title>
 </head>
 <body>
     <header id="header" class="header-container">
         <span class="header-arrow inactive">&lt;</span>
-        <h1 class="header-title">PlatziMovies</h1>
+        <div class="logo-header header-title"></div>
         <h1 class="header-title header-title--categoryView inactive">Acción</h1>
     
         <form id="searchForm" class="header-searchForm">
-          <input type="text" placeholder="Vengadores" />
-          <button id="searchBtn">🔍</button>
+          <input type="text" placeholder="Searh movie" />
+          <button id="searchBtn"><span class="material-symbols-outlined">search</span></button>
         </form>
     </header>
     
     <section id="trendingPreview" class="trendingPreview-container">
     <div class="trendingPreview-header">
-        <h2 class="trendingPreview-title">Tendencias</h2>
-        <button class="trendingPreview-btn">Ver más</button>
+        <h2 class="trendingPreview-title">Trends</h2>
+        <button class="trendingPreview-btn">See more</button>
     </div>
 
     <article class="trendingPreview-movieList">
@@ -31,7 +35,7 @@
     </section>
 
     <section id="categoriesPreview" class="categoriesPreview-container">
-    <h2 class="categoriesPreview-title">Categorías</h2>
+    <h2 class="categoriesPreview-title">Categories</h2>
 
     <article class="categoriesPreview-list">
 
@@ -39,31 +43,31 @@
     </section>
 
     <section id="genericList" class="genericList-container inactive">
-    <div class="movie-container">
+    <div class="movie-container movie-container-error">
         <img
-        src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+        src="https://www.agscinemas.com/assets/images/movies/not-found-movie.png"
         class="movie-img"
         alt="Nombre de la película"
         />
     </div>
 
-    <div class="movie-container">
+    <div class="movie-container movie-container-error">
         <img
-        src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+        src="https://www.agscinemas.com/assets/images/movies/not-found-movie.png"
         class="movie-img"
         alt="Nombre de la película"
         />
     </div>
 
-    <div class="movie-container">
+    <div class="movie-container movie-container-error">
         <img
-        src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+        src="https://www.agscinemas.com/assets/images/movies/not-found-movie.png"
         class="movie-img"
         alt="Nombre de la película"
         />
     </div>
     </section>
-
+    
     <section id="movieDetail" class="movieDetail-container inactive">
     <h1 class="movieDetail-title">Deadpool</h1>
     <span class="movieDetail-score">7.6</span>
@@ -116,7 +120,17 @@
     </article>
     </section>
 
-    <footer>Hecho con amor en Platzi por @juandc</footer>
+    <footer class="inactive">
+        <div class="info">
+            <p>Information provided by TheMovieDB API</p>
+            <a href="https://www.themoviedb.org/" target="_blank"><div class="logo-tmdb"></div></a>
+            <p>This project was developed thanks to Platzi 💚</p>
+            <a href="https://platzi.com/" target="_blank"><div class="logo-platzi"></div></a>
+            <div class="space"></div>
+            <a href="https://github.com/Neider28/RickAndMorty_API/tree/master" target="_blank"><div class="github"></div></a>
+            <p>❮❯ by Neider Silva, 2022</p>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./js/secret.js"></script>

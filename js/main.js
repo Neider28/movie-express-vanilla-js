@@ -79,7 +79,37 @@ async function getMoviesBySearch(query) {
     });
 
     const movies = data.results;
-    printMovie(movies, genericSection);
+    const moviesTrue = movies.filter(element => element.backdrop_path !== null);
+    console.log(movies);
+    if(movies.length > 0) {
+        printMovie(moviesTrue, genericSection);
+    } else {
+        genericSection.innerHTML = `
+        <div class="movie-container movie-container-error">
+            <img
+            src="https://www.agscinemas.com/assets/images/movies/not-found-movie.png"
+            class="movie-img"
+            alt="Nombre de la película"
+            />
+        </div>
+
+        <div class="movie-container movie-container-error">
+            <img
+            src="https://www.agscinemas.com/assets/images/movies/not-found-movie.png"
+            class="movie-img"
+            alt="Nombre de la película"
+            />
+        </div>
+
+        <div class="movie-container movie-container-error">
+            <img
+            src="https://www.agscinemas.com/assets/images/movies/not-found-movie.png"
+            class="movie-img"
+            alt="Nombre de la película"
+            />
+        </div>
+        `;
+    }
 }
 
 async function getTrendingMovies() {
@@ -103,6 +133,7 @@ async function getMovieById(id) {
     movieDetailTitle.textContent = data.title;
     movieDetailDescription.textContent = data.overview;
     movieDetailScore.textContent = data.vote_average;
+    movieDetailCategoriesList.style.color = "black";
 
     printCategories(data.genres, movieDetailCategoriesList);
 

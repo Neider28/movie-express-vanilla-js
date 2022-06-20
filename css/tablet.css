@@ -1,0 +1,81 @@
+h1, h2 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+button {
+    font-size: 18px;
+}
+
+.header-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-header {
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.trendingPreview-movieList {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 455px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-bottom: 16px;
+    overflow-x:hidden;
+    overflow-y:scroll;
+}
+
+.trendingPreview-btn {
+    height: 42px;
+    width: 122px;
+}
+
+.header-container--long {
+    height: 1000px;
+}
+
+.movieDetail-container {
+    top: 0px;
+}
+
+.relatedMovies-container {
+    height: 270px;
+}
+
+.header-searchForm input {
+    height: 48px;
+    width: 300px;
+}
+
+.header-searchForm {
+    width: 356px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.categoriesPreview-list, .categories-list {
+    padding: 0px 40px;
+}
+
+.genericList-container {
+    width: 600px;
+    margin: 0 auto !important;
+}
+
+.genericList-container .movie-container {
+    display: inline-block;
+    width: 30%;
+}

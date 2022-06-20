@@ -16,6 +16,7 @@ arrowBtn.addEventListener('click', () => {
 
 window.addEventListener('DOMContentLoaded', navigator, false);
 window.addEventListener('hashchange', navigator, false);
+var mediaqueryList = window.matchMedia("(min-width: 1023px)");
 
 function navigator() {
     if(location.hash.startsWith('#trends=')) {
@@ -45,7 +46,8 @@ function homePage() {
     categoriesPreviewSection.classList.remove('inactive');
     genericSection.classList.add('inactive');
     movieDetailSection.classList.add('inactive');
-
+    footer.classList.remove('inactive');
+    searchFormInput.value = "";
     getTrendingMoviesPreview();  
     getCategoriesPreview();
 }
@@ -61,6 +63,7 @@ function categoriesPage() {
     categoriesPreviewSection.classList.add('inactive');
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
+    genericSection.style.margin = '20px 0px';
 
     const [_, categoryData] = location.hash.split('=');
     const [categoryId, categoryName] = categoryData.split('-');
@@ -81,6 +84,7 @@ function moviePage() {
     categoriesPreviewSection.classList.add('inactive');
     genericSection.classList.add('inactive');
     movieDetailSection.classList.remove('inactive');
+    footer.classList.add('inactive');
 
     const [_, movieId] = location.hash.split('=');
     getMovieById(movieId);

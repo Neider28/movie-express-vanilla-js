@@ -2,20 +2,21 @@
 * { box-sizing: border-box; }
 
 :root {
-  --purple-light-1: #FBFAFB;
+  --eerie-black: #151515;
   --purple-light-2: #EEEAF2;
-  --purple-medium-1: #AA83C8;
-  --purple-medium-2: #8B48BF;
-  --purple-medium-3: #5C218A;
-  --purple-dark-1: #3E0F64;
-  --purple-dark-2: #2A0646;
+  --white: #FFFFFF;
+  --pacific-blue: #0EB1D2;
+  --opal: #8AB9B5;
+  --fulvous: #f7bf7f;
+  --fluorescent-blue: #34E4EA;
 
-  --yellow: #EECC75;
-  --green: #CAD297;
-  --aqua: #B7EAC5;
-  --lightBlue: #A2EEE5;
-  --darkBlue: #8EA2EA;
-  --red: #F09D9D;
+  --green: #97CC04;
+  --yellow: #EEB902;
+  --orange: #F45D01;
+  --lightRed: #DD1C1A;
+  --darkBlue: #086788;
+  --purple: #340068;
+  --ruby: #D81159;
 
   --font-family-titles: 'Dosis', sans-serif;
   --font-family-text: 'Red Hat Display', sans-serif;
@@ -26,16 +27,16 @@
 }
 
 html {
-  background-color: var(--purple-medium-3);
+  background-color: var(--fluorescent-blue);
 }
 
 body {
-  background-color: var(--purple-light-1);
+  background-color: var(--eerie-black);
   color: var(--purple-dark-2);
   font-family: var(--font-family-text);
   font-weight: var(--font-weight-text1);
   font-size: 16px;
-  margin: 4px 0 0 0;
+  margin: 6px 0 0 0;
   padding: 0;
 }
 
@@ -46,7 +47,7 @@ h1, h2, h3 {
 
 h1, h2 {
   font-size: 24px;
-  color: var(--purple-dark-2);
+  color: var(--pacific-blue);
   font-family: var(--font-family-titles);
   font-weight: var(--font-weight-title1);
   margin: 0;
@@ -55,7 +56,7 @@ h1, h2 {
 
 h2 {
   font-size: 18px;
-  color: var(--purple-dark-1);
+  color: var(--pacific-blue);
   font-weight: var(--font-weight-title2);
 }
 
@@ -65,28 +66,57 @@ h3 {
   font-size: 16px;
 }
 
+h1::selection, h2::selection, h3::selection {
+  background-color: var(--fluorescent-blue);
+  color: var(--eerie-black);
+}
+
 input {
-  background-color: var(--purple-light-2);
-  color: var(--purple-medium-2);
+  background-color: var(--opal);
+  color: var(--international-orange);
   border: none;
   font-size: 18px;
   padding-left: 16px;
 }
 
 input::placeholder {
-  color: var(--purple-medium-1);
+  color: var(--international-orange);
   font-family: var(--font-family-text);
 }
 
 button {
-  background-color: var(--purple-dark-1);
+  background-color: var(--fluorescent-blue);
   border: none;
-  color: var(--purple-light-2);
+  color: var(--eerie-black);
   font-weight: var(--font-weight-text2);
   font-size: 14px;
   cursor: pointer;
 }
 
+button:hover {
+  background-color: var(--eerie-black);
+  color: var(--fluorescent-blue);
+  border: 2px solid var(--fluorescent-blue);
+}
+
+.material-symbols-outlined {
+  font-weight: 600;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.logo-header {
+  width: 200px;
+  height: 100px;
+  margin: 0 auto;
+  background-image: url("../images/logo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 /* Shared */
 .header-container, .trendingPreview-header, .categoriesPreview-container {
@@ -115,6 +145,7 @@ button {
   justify-content: space-between;
   position: relative;
   flex-wrap: wrap;
+  color: var(--white);
 }
 
 
@@ -147,9 +178,10 @@ button {
   margin-bottom: 16px;
   cursor: pointer;
   display: inline-block;
+  color: var(--fluorescent-blue);
 }
 .header-arrow--white {
-  color: var(--purple-light-1);
+  color: var(--fluorescent-blue);
 }
 
 .header-searchForm {
@@ -157,7 +189,13 @@ button {
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-bottom: 20px;
   flex-wrap: nowrap;
+  border-radius: 8px;
+}
+
+.header-searchForm:hover {
+  box-shadow: 0 5px 10px rgb(12, 92, 102);
 }
 
 .header-searchForm input {
@@ -165,6 +203,7 @@ button {
   width: 100%;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+  outline: none;
 }
 .header-searchForm button {
   width: 56px;
@@ -184,7 +223,8 @@ button {
 .trendingPreview-btn {
   border-radius: 8px;
   height: 32px;
-  width: 72px;
+  width: 92px;
+  box-shadow: 0 4px 8px rgb(0, 0, 0, 0.16);
 }
 
 .trendingPreview-movieList {
@@ -235,23 +275,23 @@ button {
   height: 8px;
 }
 #id28 { --idColor: var(--yellow); }
-#id12 { --idColor: var(--red); }
+#id12 { --idColor: var(--lightRed); }
 #id16 { --idColor: var(--green); }
-#id35 { --idColor: var(--lightBlue); }
-#id80 { --idColor: var(--darkBlue); }
-#id99 { --idColor: var(--purple-dark-1); }
-#id18 { --idColor: var(--purple-medium-1); }
+#id35 { --idColor: var(--darkBlue); }
+#id80 { --idColor: var(--purple); }
+#id99 { --idColor: var(--orange); }
+#id18 { --idColor: var(--ruby); }
 #id10751 { --idColor: var(--yellow); }
-#id14 { --idColor: var(--red); }
+#id14 { --idColor: var(--lightRed); }
 #id36 { --idColor: var(--green); }
-#id27 { --idColor: var(--lightBlue); }
+#id27 { --idColor: var(--orange); }
 #id10402 { --idColor: var(--darkBlue); }
-#id9648 { --idColor: var(--purple-dark-1); }
-#id10749 { --idColor: var(--purple-medium-1); }
+#id9648 { --idColor: var(--purple); }
+#id10749 { --idColor: var(--ruby); }
 #id878 { --idColor: var(--yellow); }
-#id10770 { --idColor: var(--red); }
+#id10770 { --idColor: var(--lightRed); }
 #id53 { --idColor: var(--green); }
-#id10752 { --idColor: var(--lightBlue); }
+#id10752 { --idColor: var(--orange); }
 #id37 { --idColor: var(--darkBlue); }
 
 
@@ -261,7 +301,7 @@ button {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 32px 24px;
+  padding: 20px 24px;
 }
 
 .genericList-container .movie-container {
@@ -269,20 +309,28 @@ button {
   width: 47.5%;
 }
 
+.genericList-container .movie-container-error {
+  background-color: var(--white);
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
 .genericList-container .movie-img {
   width: 100%;
+  margin-bottom: 10px;
 }
 
 
 /* Movie Detail */
 .movieDetail-container {
+  width: 100%;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   padding: 32px 24px;
   margin-top: 403px;
   z-index: 1;
   position: absolute;
-  background-color: var(--purple-light-1);
+  background-color: var(--white);
 }
 
 .movieDetail-title {
@@ -310,7 +358,7 @@ button {
 
 .relatedMovies-container {
   margin-top: 24px;
-  height: 216px;
+  height: 250px;
 }
 
 .relatedMovies-title {
@@ -322,7 +370,7 @@ button {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-  width: calc(100vw - 24px);
+  width: calc(100vw - 94px);
   padding-bottom: 16px;
 }
 
@@ -339,19 +387,116 @@ button {
   min-height: 187.5px;
   max-height: 187.5px;
 }
+
+.relatedMovies-scrollContainer::-webkit-scrollbar, .trendingPreview-movieList::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  margin-bottom: 10px;
+}
+
+.relatedMovies-scrollContainer::-webkit-scrollbar-track, .trendingPreview-movieList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.relatedMovies-scrollContainer::-webkit-scrollbar-thumb, .trendingPreview-movieList::-webkit-scrollbar-thumb {
+  height: 8px;
+  background-color: var(--fluorescent-blue);
+  border-radius: 20px;
+  border: 3px solid var(--fluorescent-blue);
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 8px;
+  background-color: transparent;
+  border-radius: 20px;
+  border: 3px solid var(--pacific-blue);
+}
   
 
 /* Footer */
 footer {
-  background-color: var(--purple-medium-3);
-  color: var(--purple-light-2);
+  background-color: var(--white);
   text-align: center;
-  height: 48px;
+  height: auto;
   display: flex;
+  padding-top: 40px;
+  padding-bottom: 25px;
   justify-content: center;
   align-items: center;
+  border-bottom: solid 5px var(--fluorescent-blue);
 }
 
+.info {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+}
+
+a {
+  width: auto;
+  height: auto;
+}
+
+.logo-tmdb {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background-image: url("https://pbs.twimg.com/profile_images/1243623122089041920/gVZIvphd_400x400.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logo-platzi {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  background-image: url("../images/logo-platzi.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.space {
+  width: 80%;
+  height: 2px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background-color: var(--darkBlue);
+}
+
+.info .github {
+  width: 34px;
+  height: 34px;
+  margin: 0 auto;
+  background-image: url("../images/github_logo.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.info p {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.info p::selection {
+  background-color: var(--fluorescent-blue);
+  color: #1f1f1f;
+}
 
 /* Navigation */
 .inactive {
