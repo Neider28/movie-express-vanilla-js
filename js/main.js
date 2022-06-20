@@ -1,10 +1,3 @@
-const api = axios.create({
-    baseURL: 'https://api.themoviedb.org/3/',
-    params: {
-        'api_key': API_KEY,
-    }
-});
-
 function printMovie(movies, container) {
     container.innerHTML = "";
 
@@ -147,3 +140,10 @@ async function getRelatedMoviesById(id) {
     printMovie(relatedMovies, relatedMoviesContainer);
     relatedMoviesContainer.scrollTo(0, 0);
 }
+
+const api = axios.create({
+    baseURL: 'https://api.themoviedb.org/3/',
+    params: {
+        'api_key': API_KEY,
+    }
+});
