@@ -1,19 +1,19 @@
 {
-  "name": "neider28.github.io",
+  "name": "movieexpress",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Neider28/Neider28.github.io.git"
+    "url": "git+https://github.com/Neider28/MovieExpress"
   },
   "author": "Neider Silva",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Neider28/Neider28.github.io/issues"
+    "url": "https://neider28.github.io/MovieExpress/"
   },
-  "homepage": "https://github.com/Neider28/Neider28.github.io#readme"
+  "homepage": "https://neider28.github.io/MovieExpress/"
 }
