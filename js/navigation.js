@@ -1,20 +1,31 @@
 searchFormBtn.addEventListener('click', () => {
-    location.hash = `#search=${searchFormInput.value}`;
+    location.hash = `#search=${searchFormInput.value.split(" ").join('')}`;
 });
 
 trendingBtn.addEventListener('click', () => {
     location.hash = '#trends=';
 });
 
+headerTitle.addEventListener('click', () => {
+    location.hash = '#home';
+});
+
 arrowBtn.addEventListener('click', () => {
-    if(document.domain !== 'localhost') {
-        location.hash = '#home';
+    const stateLoad = window.history.state ? window.history.state.loadUrl : '';
+    if (stateLoad.includes('#')) {
+        window.location.hash = '';
     } else {
-        history.back();
+        window.history.back();
     }
 });
 
-window.addEventListener('DOMContentLoaded', navigator, false);
+window.addEventListener('DOMContentLoaded',
+    () => {
+        navigator();
+        window.history.pushState({ loadUrl: window.location.href }, null, '');
+    }, 
+    false);
+
 window.addEventListener('hashchange', navigator, false);
 var mediaqueryList = window.matchMedia("(min-width: 1023px)");
 
@@ -28,6 +39,7 @@ function navigator() {
     } else if(location.hash.startsWith('#category=')) {
         categoriesPage();
     } else {
+        location.hash = '#home';
         homePage();
     }
 
@@ -55,6 +67,7 @@ function homePage() {
 function categoriesPage() {
     headerSection.classList.remove('header-container--long');
     headerSection.style.background = '';
+    headerTitle.classList.remove('inactive');
     arrowBtn.classList.remove('inactive');
     arrowBtn.classList.remove('header-arrow--white');
     headerCategoryTitle.classList.remove('inactive');
@@ -70,6 +83,7 @@ function categoriesPage() {
 
     headerCategoryTitle.innerHTML = categoryName.replace('%20', ' ');
     getMoviesByCategory(categoryId);
+    footer.classList.remove('inactive');
 }
 
 function moviePage() {
@@ -92,10 +106,9 @@ function moviePage() {
 
 function search() {
     headerSection.classList.remove('header-container--long');
-    headerSection.style.background = '';
     arrowBtn.classList.remove('inactive');
     arrowBtn.classList.remove('header-arrow--white');
-    headerTitle.classList.add('inactive');
+    headerTitle.classList.remove('inactive');
     headerCategoryTitle.classList.add('inactive');
     searchForm.classList.remove('inactive');
     trendingPreviewSection.classList.add('inactive');
