@@ -1,5 +1,5 @@
 searchFormBtn.addEventListener('click', () => {
-    location.hash = `#search=${searchFormInput.value.trim()}`;
+    location.hash = `#search=${searchFormInput.value}`;
 });
 
 trendingBtn.addEventListener('click', () => {
@@ -105,6 +105,7 @@ function search() {
 
     const [_, query] = location.hash.split('=');
     getMoviesBySearch(query);
+    footer.classList.remove('inactive');
 }
 
 function trendsPage() {

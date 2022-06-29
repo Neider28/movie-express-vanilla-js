@@ -12,7 +12,8 @@ function printMovie(movies, container) {
         const movieContainer = document.createElement('div');
         movieContainer.classList.add('movie-container');
         movieContainer.addEventListener('click', () => {
-            location.hash = `#movie=${element.id}`;
+            const cleanSpace = element.original_title;
+            location.hash = `#movie=${element.id}-${cleanSpace.replaceAll(' ', '-')}`;
         });
 
         const movieImage = document.createElement('img');

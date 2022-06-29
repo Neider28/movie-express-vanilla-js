@@ -370,7 +370,7 @@ button:hover {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-  width: calc(100vw - 94px);
+  width: calc(100vw - 44px);
   padding-bottom: 16px;
 }
 
