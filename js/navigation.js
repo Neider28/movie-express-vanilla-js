@@ -106,6 +106,7 @@ function moviePage() {
 
 function search() {
     headerSection.classList.remove('header-container--long');
+    headerSection.style.background = '';
     arrowBtn.classList.remove('inactive');
     arrowBtn.classList.remove('header-arrow--white');
     headerTitle.classList.remove('inactive');
@@ -113,6 +114,9 @@ function search() {
     searchForm.classList.remove('inactive');
     trendingPreviewSection.classList.add('inactive');
     categoriesPreviewSection.classList.add('inactive');
+    if(searchFormInput.value === '') {
+        printNotFound();
+    }
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
 
