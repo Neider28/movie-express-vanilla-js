@@ -12,6 +12,7 @@ headerTitle.addEventListener('click', () => {
 
 arrowBtn.addEventListener('click', () => {
     const stateLoad = window.history.state ? window.history.state.loadUrl : '';
+    searchFormInput.value = "";
     if (stateLoad.includes('#')) {
         window.location.hash = '';
     } else {
